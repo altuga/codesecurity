@@ -2,7 +2,6 @@ package org.jugistanbul.config;
 
 import org.jugistanbul.exceptionhandling.CustomAccessDeniedHandler;
 import org.jugistanbul.exceptionhandling.CustomBasicAuthenticationEntryPoint;
-import com.eazybytes.filter.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.jugistanbul.filter.*;
 import org.springframework.context.annotation.Bean;

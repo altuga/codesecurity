@@ -6,10 +6,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @SpringBootApplication
 @EnableWebSecurity
-public class EazyBankBackendApplication {
+public class BankBackendApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EazyBankBackendApplication.class, args);
+        SpringApplication.run(BankBackendApplication.class, args);
     }
 
 }
