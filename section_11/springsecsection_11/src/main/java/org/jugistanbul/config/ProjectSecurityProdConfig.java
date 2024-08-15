@@ -90,8 +90,8 @@ public class ProjectSecurityProdConfig {
     @Bean
     public AuthenticationManager authenticationManager(UserDetailsService userDetailsService,
             PasswordEncoder passwordEncoder) {
-        EazyBankProdUsernamePwdAuthenticationProvider authenticationProvider =
-                new EazyBankProdUsernamePwdAuthenticationProvider(userDetailsService, passwordEncoder);
+        BankProdUsernamePwdAuthenticationProvider authenticationProvider =
+                new BankProdUsernamePwdAuthenticationProvider(userDetailsService, passwordEncoder);
         ProviderManager providerManager = new ProviderManager(authenticationProvider);
         providerManager.setEraseCredentialsAfterAuthentication(false);
         return  providerManager;
