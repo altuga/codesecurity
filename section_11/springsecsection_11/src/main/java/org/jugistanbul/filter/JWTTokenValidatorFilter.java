@@ -52,7 +52,7 @@ public class JWTTokenValidatorFilter extends OncePerRequestFilter {
 
            } catch (Exception exception) {
                throw new BadCredentialsException("Invalid Token received!");
-           }
+               }
        }
         filterChain.doFilter(request,response);
     }
