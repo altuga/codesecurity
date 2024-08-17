@@ -14,17 +14,17 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LoansController {
 
-    private final LoanRepository loanRepository;
+        private final LoanRepository loanRepository;
 
-    @GetMapping("/myLoans")
-    @PostAuthorize("hasRole('USER')")
-    public List<Loans> getLoanDetails(@RequestParam long id) {
-        List<Loans> loans = loanRepository.findByCustomerIdOrderByStartDtDesc(id);
-        if (loans != null) {
-            return loans;
-        } else {
-            return null;
+        @GetMapping("/myLoans")
+        @PostAuthorize("hasRole('USER')")
+        public List<Loans> getLoanDetails(@RequestParam long id) {
+            List<Loans> loans = loanRepository.findByCustomerIdOrderByStartDtDesc(id);
+            if (loans != null) {
+                return loans;
+            } else {
+                return null;
+            }
         }
-    }
 
 }

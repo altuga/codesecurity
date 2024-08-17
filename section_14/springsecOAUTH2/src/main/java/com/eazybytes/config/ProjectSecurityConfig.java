@@ -22,6 +22,12 @@ public class ProjectSecurityConfig {
         return httpSecurity.build();
     }
 
+    /*private ClientRegistration githubClientRegistration() {
+        return CommonOAuth2Provider.GITHUB.getBuilder("github").clientId("Iv23liYRUeyAUAKLnsHH")
+                .clientSecret("514713a7e756c619964f7307c254ea5991c13d73").build();
+    }*/
+
+
     /*@Bean
     ClientRegistrationRepository clientRegistrationRepository() {
         ClientRegistration github = githubClientRegistration();
@@ -29,10 +35,6 @@ public class ProjectSecurityConfig {
         return new InMemoryClientRegistrationRepository(github, facebook);
     }
 
-    private ClientRegistration githubClientRegistration() {
-        return CommonOAuth2Provider.GITHUB.getBuilder("github").clientId("Ov23liCBLLUjii41pS7k")
-                .clientSecret("9da8734b56aad52d91b268fe6834a8df12447d95").build();
-    }
 
     private ClientRegistration facebookClientRegistration() {
         return CommonOAuth2Provider.FACEBOOK.getBuilder("facebook").clientId("974042741122392")
