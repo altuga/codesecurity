@@ -21,7 +21,7 @@ public class LoansController {
     private final CustomerRepository customerRepository;
 
     @GetMapping("/myLoans")
-    @PostAuthorize("hasRole('USER')")
+    //@PostAuthorize("hasRole('USER')")
     public List<Loans> getLoanDetails(@RequestParam String email) {
         Optional<Customer> optionalCustomer = customerRepository.findByEmail(email);
         if (optionalCustomer.isPresent()) {
