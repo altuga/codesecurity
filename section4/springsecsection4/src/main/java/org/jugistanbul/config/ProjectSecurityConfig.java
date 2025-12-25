@@ -18,9 +18,16 @@ public class ProjectSecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrfConfig -> csrfConfig.disable()).authorizeHttpRequests((requests) -> requests.requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated().requestMatchers("/notices", "/contact", "/error", "/register").permitAll());
-        http.formLogin(withDefaults());
-        http.httpBasic(withDefaults());
+        http.csrf(csrfConfig -> csrfConfig.disable())
+            .authorizeHttpRequests((requests) -> requests
+                .requestMatchers("/", "/home").authenticated()  // Allow authenticated users to access root and home
+                .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
+                .requestMatchers("/notices", "/contact", "/error", "/register").permitAll()
+                .anyRequest().authenticated())  // Any other request requires authentication
+            .formLogin(form -> form
+                .defaultSuccessUrl("/myAccount", true)  // Redirect to /myAccount after login
+                .permitAll())
+            .httpBasic(withDefaults());
         return http.build();
     }
 

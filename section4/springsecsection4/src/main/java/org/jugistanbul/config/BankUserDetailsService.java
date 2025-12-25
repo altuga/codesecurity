@@ -2,11 +2,13 @@ package org.jugistanbul.config;
 
 /*
 @Service
-@RequiredArgsConstructor
-
 public class BankUserDetailsService implements UserDetailsService {
 
     private final CustomerRepository customerRepository;
+
+    public BankUserDetailsService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -16,7 +18,5 @@ public class BankUserDetailsService implements UserDetailsService {
         return new User(customer.getEmail(), customer.getPwd(), authorities);
     }
 }
-
-
- */
+*/
 
